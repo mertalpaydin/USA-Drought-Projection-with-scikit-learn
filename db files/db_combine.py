@@ -1,6 +1,5 @@
 import os
 import pandas as pd
-from datetime import datetime
 
 
 def process_csv_files(directory, folder_name):
@@ -75,15 +74,16 @@ def process_csv_files(directory, folder_name):
 
 
 # working directory where directories storing csv files are located
-current_path = "C:/Users/merta/OneDrive/Desktop/FS Courses/Data Analytics/Drought_Projection/project_files/csv"
+current_path = os.getcwd()
+csv_path = os.path.join(os.path.abspath(os.path.join(current_path, "..")), "csv")
 
 # List to store DataFrames from each directory
 climate_dfs = []
 prediction_df = None
 
 # Iterate through all directories under the current path
-for directory in os.listdir(current_path):
-    dir_path = os.path.join(current_path, directory)
+for directory in os.listdir(csv_path):
+    dir_path = os.path.join(csv_path, directory)
     if os.path.isdir(dir_path):
         df = process_csv_files(dir_path, directory)
         if df is not None:
@@ -107,11 +107,11 @@ else:
 
 # Save the final DataFrames to a CSV files
 if final_df is not None:
-    file_name = (os.path.join(current_path, f"climate_data_combined.csv"))
+    file_name = (os.path.join(csv_path, f"climate_data_combined.csv"))
     final_df.to_csv(file_name, index=False)
     print("Combined data saved to 'climate_data_combined.csv'")
 
 if prediction_df is not None:
-    file_name = (os.path.join(current_path, f"prediction_data_combined.csv"))
+    file_name = (os.path.join(csv_path, f"prediction_data_combined.csv"))
     prediction_df.to_csv(file_name, index=False)
     print("Combined data saved to 'prediction_data_combined.csv'")

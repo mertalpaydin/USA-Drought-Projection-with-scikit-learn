@@ -96,7 +96,8 @@ for database in database_dict.keys():
 
         # after completing extraction for each year, save the data to a csv file to avoid data loss
         if (index + 1) % 12 == 0:
-            directory = f"{os.path.abspath(os.getcwd())}/csv"
+            parent_directory = os.path.abspath(os.path.join(os.getcwd(), ".."))
+            directory = os.path.join(parent_directory, "csv")
             file_name = (os.path.join(directory,
                                       f"us_climate_data_{database.replace('/', '_')}_{i_date[:4]}.csv")
                          .replace("\\", "/"))
