@@ -1,0 +1,7 @@
+,Model,Average RMSE,Standard Deviation,Processing Time,Best Params.
+0,Linear Regression,2.270203992066963,0.1375481869575981,1.5770626068115234,{}
+1,k-Nearest_Neighbors,1.9498496572173725,0.2434519842406207,25.00186824798584,"{'k-Nearest_Neighbors__weights': 'distance', 'k-Nearest_Neighbors__n_neighbors': 25}"
+2,Random_Forest,1.986727395192965,0.21137343970883782,1088.73171377182,"{'Random_Forest__max_depth': 25, 'Random_Forest__max_features': 4, 'Random_Forest__n_estimators': 56}"
+3,SVM,1.8185763023672539,0.3473966387731884,1434.7857904434204,"{'SVM__kernel': 'rbf', 'SVM__gamma': 'scale', 'SVM__C': 10}"
+4,Gradient_Boosting_Regressor,1.9707276022791766,0.16883532317341102,764.6018257141113,"{'Gradient_Boosting_Regressor__max_depth': 38, 'Gradient_Boosting_Regressor__max_features': 2, 'Gradient_Boosting_Regressor__n_estimators': 32}"
+5,Neural_Network,1.884465222097141,0.2837198942381433,1689.9814434051514,"{'Neural_Network__activation': 'tanh', 'Neural_Network__alpha': 0.4576212982620824, 'Neural_Network__hidden_layer_sizes': (100,), 'Neural_Network__learning_rate': 'adaptive', 'Neural_Network__solver': 'sgd'}"
